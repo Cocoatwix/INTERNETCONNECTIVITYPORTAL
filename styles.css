@@ -1,4 +1,111 @@
+
+/* Responsive design. Add sidebar when using smaller screen. */
+
+/* Side bar animations */
+@keyframes slide_in
+{
+	0%   {left: -250px;}
+	100% {left: 0px;}
+}
+
+@keyframes slide_out
+{
+	0%   {left: 0px;}
+	100% {left: -250px;}
+}
+
+@media screen and (max-width: 800px)
+{
+	.PCLayout
+	{
+		display: none;
+	}
+	
+	#sidebarDiv
+	{
+		position: fixed;
+		left: 0;
+		top: 0;
+		background-color: red;
+		width: 250px;
+		height: 100%;
+		display: none;
+		
+		animation-name: slide_in;
+		animation-duration: 0.2s;
+	}
+	
+	#hamburger
+	{
+		display: block;
+		width: 50px;
+		cursor: pointer;
+	}
+	
+	#hamburgerSpan
+	{
+		display: inline-block;
+	}
+	
+	#hamburgerSpan:hover
+	{
+		background-color: #d9d9d9;
+	}
+	
+	#sidebarX
+	{
+		display: block;
+		width: 50px;
+		cursor: pointer;
+	}
+	
+	#sidebarXSpan
+	{
+		display: inline-block;
+		margin: 8px;
+	}
+	
+	#sidebarXSpan:hover
+	{
+		background-color: #d9d9d9;
+	}
+	
+	#sideBarRule
+	{
+		display: block;
+		height: 20px;
+		background-image: url("assets/hrule.png");
+	}
+}
+
+/* Regular layout for larger screens. */
+@media screen and (min-width: 801px)
+{
+	.mobileLayout
+	{
+		display: none;
+	}
+	
+	.sidebar
+	{
+		display: none;
+	}
+
+	#headImg
+	{
+		display: block;
+		margin: auto;
+		width: 15%;
+	}
+
+	#navBarRule
+	{
+		height: 20px;
+		background-image: url("assets/hrule.png");
+	}
+}
+
 body
 {
-	color: grey;
+	background-color: #eeeeee;
 }
