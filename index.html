@@ -1,10 +1,20 @@
+
+<!--
+
+Of course, thank you to W3Schools for existing. Without them, I'd be perfectly
+lost making this.
+
+-->
+
 <!DOCTYPE html>
 <html lang="en-CA">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Portfolio.">
+    <meta name="keywords" content="Zach Strong">
 		<meta name="author" content="Zach Strong">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="robots" content="index, follow"> -->
     
     <link rel="stylesheet" href="styles.css">
     
@@ -14,22 +24,104 @@
   <body>
   
     <!-- Sidebar for mobile layout -->
-    <div id="sidebarDiv" class="sidebar mobileLayout">
-    
-      <span id="sidebarXSpan" class="sidebar mobileLayout">
-        <img src="assets/x.png" alt="Close" id="sidebarX" class="sidebar mobileLayout">
+    <div id="sidebarDiv" class="sidebar mobileLayout blockStyle">
+      
+      <div id="sidebarXDiv" class="sidebar mobileLayout blockStyle">
+        <span id="sidebarXSpan" class="sidebar mobileLayout inlineblockStyle">
+          <img src="assets/x.png" alt="Close" id="sidebarX" 
+          class="sidebar mobileLayout blockStyle">
+        </span>
+      </div>
+      
+      <span id="tabSpan" class="sidebar mobileLayout inlineblockStyle">
+        <div id="aboutTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/question.png" alt="Question Mark" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/aboutLabel.png" alt="About" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
+        
+        <div id="educationTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/education.png" alt="Hat" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/educationLabel.png" alt="Education" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
+        
+        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/happy.png" alt="Happy Hexaon" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/sampleLabel.png" alt="Sample Text" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
+        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/happy.png" alt="Happy Hexaon" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/sampleLabel.png" alt="Sample Text" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
+        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/happy.png" alt="Happy Hexaon" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/sampleLabel.png" alt="Sample Text" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
+        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+          <img src="assets/happy.png" alt="Happy Hexaon" 
+          class="sidebar mobileLayout sidebarIcon">
+          <img src="assets/sampleLabel.png" alt="Sample Text" 
+          class="sidebar mobileLayout sidebarLabel">
+        </div>
       </span>
        
     </div>
     
-    <span id="hamburgerSpan" class="mobileLayout">
+    <span id="hamburgerSpan" class="mobileLayout sidebarHoverable">
       <img src="assets/hamburger.png" alt="Hamburger" id="hamburger" class="mobileLayout">
     </span>
     
-    <div id="sideBarRule" class="mobileLayout"></div>
-    
     <img src="assets/hexagon.gif" alt="Smiling hexagon." id="headImg" class="PCLayout">
-    <div id="navBarRule" class="PCLayout"></div>
+    
+    <div id="topRule"></div>
+    
+    <!-- Desktop navigation bar -->
+    <div id="navDiv" class="PCLayout">
+    
+      <div id="aboutSign" class="PCLayout navSignDiv">
+        <img src="assets/arrowSign.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+        <img src="assets/aboutLabel.png" alt="About" class="PCLayout navbarItem navLabel">
+        <img src="assets/question.png" alt="Question Mark" class="PCLayout navbarItem navIcon">
+      </div>
+      
+      <div id="educationSign" class="PCLayout navSignDiv">
+        <img src="assets/arrowSign.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+        <img src="assets/educationLabel.png" alt="Education" class="PCLayout navbarItem navLabel">
+        <img src="assets/education.png" alt="Hat" class="PCLayout navbarItem navIcon">
+      </div>
+      
+      <div class="PCLayout navSignDiv">
+        <img src="assets/arrowSign.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      </div>
+      
+      <div class="PCLayout navSignDiv">
+        <img src="assets/arrowSign.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      </div>
+      
+      <div class="PCLayout navSignDiv">
+        <img src="assets/arrowSign.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      </div>
+      
+    </div>
+    
+    <p id="defaultMessage">
+      This site is currently undergoing maintenance. Check back soon!
+    </p>
     
     <script src="script.js"></script>
   </body>
