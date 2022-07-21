@@ -36,6 +36,9 @@
 		width: 250px;
 		height: 100%;
 		
+		/* Prevents the horizontal rule from drawing over the sidebar. */
+		z-index: 3;
+		
 		overflow-x: hidden;
 		overflow-y: scroll;
 		
@@ -171,6 +174,9 @@
 		flex-direction: row;
 		wrap-flex: no-wrap;
 		justify-content: center;
+		
+		/* Keeps the navigation bar from resizing when hovering over signs. */
+		height: 100px;
 	}
 	
 	.navSignDiv
@@ -179,10 +185,21 @@
 		position: relative;
 	}
 	
+	.navSignDiv:hover
+	{
+		cursor: pointer;
+	}
+	
 	.navSign
 	{
 		width: 200px;
-		margin-top: -7px;
+		margin-top: -27px;
+	}
+	
+	/* Allows navigation signs to fall when hovered over. */
+	.navSignDiv:hover .navSign
+	{
+		margin-top: -17px;
 	}
 	
 	.navLabel
@@ -192,8 +209,14 @@
 		
 		/* Align the asset to the sign. */
 		position: absolute;
-		top: 20px;
+		top: 10px;
 		left: 62px;
+	}
+	
+	/* Allows label to fall with signs on nav bar. */
+	.navSignDiv:hover .navLabel
+	{
+		top: 20px;
 	}
 	
 	.navIcon
@@ -203,8 +226,37 @@
 		
 		/* Align the asset to the sign. */
 		position: absolute;
-		top: 25px;
+		top: 15px;
 		left: 15px;
+	}
+	
+	/* Allows icon to fall with signs on nav bar. */
+	.navSignDiv:hover .navIcon
+	{
+		top: 25px;
+	}
+	
+	/* The more sign need special treatment. */
+	#moreIcon
+	{
+		left: 25px;
+	}
+	
+	#moreLabel
+	{
+		left: 72px;
+	}
+	
+	#moreMenu
+	{
+		display: none;
+		
+		width: 200px;
+		height: 500px;
+		background-color: red;
+		
+		/* Appears wherever the mouse is clicked. */
+		position: fixed;
 	}
 }
 
@@ -214,12 +266,37 @@ body
 	background-color: #eeeeee;
 }
 
-
-#topRule
+/* This is used solely to position the horizonal rule correctly. */
+#topSpan
 {
-	height: 20px;
+	position: relative;
+}
+
+/* Used so that the navigation sign boards hide behind the horizontal rule. */
+#topCoverDiv
+{
+	height: 30px;
 	display: block;
+	background-color: #eeeeee;
+	
+	position: relative;
+	top: -5px;
+	z-index: 1;
+}
+
+#topRuleDiv
+{
+	/* This positions the div so that the horizontal rule goes at the edge of the top cover. */
+	height: 20px;
+	margin-top: -10px;
+	position: relative;
+	top: -9px;
+	z-index: 2;
+
+	/* This is the actual horizonal rule image. */
 	background-image: url("assets/hrule.png");
+	background-repeat: repeat-x;
+	background-position: top;
 }
 
 #defaultMessage
