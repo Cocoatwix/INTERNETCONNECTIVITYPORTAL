@@ -18,6 +18,11 @@ lost making this.
     
     <link rel="stylesheet" href="styles.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    
     <title>INTERNETCONNECTIVITYPORTAL</title>
   </head>
   
@@ -34,46 +39,65 @@ lost making this.
       </div>
       
       <span id="tabSpan" class="sidebar mobileLayout inlineblockStyle">
-        <div id="aboutTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/question.png" alt="Question Mark" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/aboutLabel.png" alt="About" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
+        <a href="pages/about.html" class="mobileLayout">
+          <div id="aboutTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/question.png" alt="Question Mark" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/aboutLabel.png" alt="About" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
         
-        <div id="educationTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/education.png" alt="Hat" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/educationLabel.png" alt="Education" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
+        <a href="pages/education.html" class="mobileLayout">
+          <div id="pages/educationTab" class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/education.png" alt="Hat" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/educationLabel.png" alt="Education" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
         
-        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/happy.png" alt="Happy Hexaon" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/sampleLabel.png" alt="Sample Text" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
-        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/happy.png" alt="Happy Hexaon" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/sampleLabel.png" alt="Sample Text" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
-        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/happy.png" alt="Happy Hexaon" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/sampleLabel.png" alt="Sample Text" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
-        <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
-          <img src="assets/happy.png" alt="Happy Hexaon" 
-          class="sidebar mobileLayout sidebarIcon">
-          <img src="assets/sampleLabel.png" alt="Sample Text" 
-          class="sidebar mobileLayout sidebarLabel">
-        </div>
+        <a href="pages/sample.html" class="mobileLayout">
+          <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/happy.png" alt="Happy Hexaon" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/sampleLabel.png" alt="Sample Text" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
+        
+        <a href="pages/sample.html" class="mobileLayout">
+          <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/happy.png" alt="Happy Hexaon" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/sampleLabel.png" alt="Sample Text" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
+        
+        <a href="pages/sample.html" class="mobileLayout">
+          <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/happy.png" alt="Happy Hexaon" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/sampleLabel.png" alt="Sample Text" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
+        
+        <a href="pages/sample.html" class="mobileLayout">
+          <div class="sidebar mobileLayout sidebarTab inlineblockStyle">
+            <img src="assets/happy.png" alt="Happy Hexaon" 
+            class="sidebar mobileLayout sidebarIcon">
+            <img src="assets/sampleLabel.png" alt="Sample Text" 
+            class="sidebar mobileLayout sidebarLabel">
+          </div>
+        </a>
+        
       </span>
     </div>
+    
+    <!-- Covers content as the user scrolls down -->
+    <div id="contentCover"></div>
     
     <span id="hamburgerSpan" class="mobileLayout sidebarHoverable">
       <img src="assets/hamburger.png" alt="Hamburger" id="hamburger" class="mobileLayout">
@@ -91,34 +115,44 @@ lost making this.
     <!-- Desktop navigation bar -->
     <div id="navDiv" class="PCLayout">
     
-      <div id="aboutSign" class="PCLayout navSignDiv">
-        <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
-        <img src="assets/aboutLabel.png" alt="About" class="PCLayout navbarItem navLabel">
-        <img src="assets/question.png" alt="Question Mark" class="PCLayout navbarItem navIcon">
+      <div id="aboutSign" name="About" class="PCLayout navSignDiv">
+        <a href="pages/about.html" class="PCLayout navbarAnchor">
+          <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+          <img src="assets/aboutLabel.png" alt="About" class="PCLayout navbarItem navLabel">
+          <img src="assets/question.png" alt="Question Mark" class="PCLayout navbarItem navIcon">
+        </a>
       </div>
       
-      <div id="educationSign" class="PCLayout navSignDiv">
-        <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
-        <img src="assets/educationLabel.png" alt="Education" class="PCLayout navbarItem navLabel">
-        <img src="assets/education.png" alt="Hat" class="PCLayout navbarItem navIcon">
+      <div id="educationSign" name="Education" class="PCLayout navSignDiv">
+        <a href="pages/education.html" class="PCLayout navbarAnchor">
+          <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+          <img src="assets/educationLabel.png" alt="Education" class="PCLayout navbarItem navLabel">
+          <img src="assets/education.png" alt="Hat" class="PCLayout navbarItem navIcon">
+        </a>
       </div>
       
-      <div class="PCLayout navSignDiv">
-        <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
-        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
-        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      <div name="Sample" class="PCLayout navSignDiv">
+        <a href="pages/about.html" class="PCLayout navbarAnchor">
+          <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+          <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+          <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+        </a>
       </div>
       
-      <div class="PCLayout navSignDiv">
-        <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
-        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
-        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      <div name="Sample" class="PCLayout navSignDiv">
+        <a href="pages/sample.html" class="PCLayout navbarAnchor">
+          <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+          <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+          <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+        </a>
       </div>
       
-      <div class="PCLayout navSignDiv">
-        <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
-        <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
-        <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+      <div name="Sample" class="PCLayout navSignDiv">
+        <a href="pages/sample.html" class="PCLayout navbarAnchor">
+          <img src="assets/arrowSignDrop.png" alt="Arrow Sign" class="PCLayout navbarItem navSign">
+          <img src="assets/sampleLabel.png" alt="Sample" class="PCLayout navbarItem navLabel">
+          <img src="assets/happy.png" alt="Happy Hexagon" class="PCLayout navbarItem navIcon">
+        </a>
       </div>
       
       <div id="moreSign" class="PCLayout navSignDiv">
@@ -135,7 +169,12 @@ lost making this.
     
     <p id="defaultMessage">
       This site is currently undergoing construction. Check back soon!
-      July 21, 2022
+      <br>
+      July 24, 2022
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      Content
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      :)
     </p>
     
     <script src="script.js"></script>

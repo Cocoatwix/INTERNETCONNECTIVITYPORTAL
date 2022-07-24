@@ -17,6 +17,7 @@ var navSignDivClass;
 var moreSign;
 
 var moreMenu;
+var moreMenuHeight;
 
 
 function toggle_sidebar()
@@ -38,6 +39,22 @@ function toggle_sidebar()
 }
 
 
+function create_moreMenu_link(sign, signIconSrc, signLink)
+/** Creates a moreMenu link element as a string and
+    returns it. */
+{
+	//Increment height of menu
+	moreMenuHeight += 34;
+	
+	return "<div class=\"PClayout moreMenuLink\">" +
+		"<a href=\"" + signLink + "\" class=\"PClayout moreMenuAnchor\">" + 
+			"<img src=\"" + signIconSrc + "\" alt=\"icon\" class=\"PClayout moreMenuIcon\">" +
+			"<span class=\"moreMenuText\">" + sign.getAttribute("name") + "</span>" + 
+		"</a>" + 
+	"</div>";
+}
+
+
 function inspect_signs()
 /** Checks to see how much space we have on the viewport, then
 	  shows/hides signs as necessary to keep layout snug. */
@@ -48,12 +65,19 @@ function inspect_signs()
 	//-30 is to give some breathing room (don't want scroll bar to show up)
 	let signCapacity = Math.floor((window.innerWidth - 30) / 200);
 	
-	console.log(signCapacity);
+	//Clear more menu for adding the elements again
+	moreMenu.innerHTML = "";
+	
+	//Reset size
+	moreMenuHeight = 0;
 	
 	//This hides signs when the screen is too small,
 	// as well as manages the "more" sign.
 	for (let sign of navSignDivClass)
 	{
+		//Lets us access icons from signs
+		let signChildren = sign.children[0].children;
+		
 		if (signCount < signCapacity-1)
 		{
 			sign.style.display = "block";
@@ -62,6 +86,10 @@ function inspect_signs()
 		else if (signCount < signCapacity)
 		{
 			sign.style.display = "none";
+			
+			//Adding more menu elements
+			moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
+			
 			moreSign.style.display = "block";
 		}
 		
@@ -69,6 +97,9 @@ function inspect_signs()
 		{
 			if (sign.id != "moreSign")
 			{
+				//Adding more menu elements
+				moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
+				
 				sign.style.display = "none";
 			}
 		}
@@ -85,6 +116,11 @@ function inspect_signs()
 	
 	if (signCapacity == signCount-1)
 		navSignDivClass[signCapacity-1].style.display = "block";
+	
+	//Add a bit of leeway for moreMenu
+	moreMenuHeight += 5;
+	
+	moreMenu.style.height = moreMenuHeight + "px";
 }
 
 
@@ -111,9 +147,17 @@ function check_layout()
 function show_more_menu()
 /** Toggles the "more" menu for showing hidden options. */
 {
+	let mouseY = event.clientY;
+	let mouseX = event.clientX;
+	
 	moreMenu.style.display = "block";
+	
+	if (mouseX + 200 > window.innerWidth)
+		moreMenu.style.left = window.innerWidth - 200 + "px";
+	else
+		moreMenu.style.left = mouseX + "px";
+	
 	moreMenu.style.top = event.clientY + "px";
-	moreMenu.style.left = event.clientX + "px";
 	
 	//Have you ever seen code so elegant in your life?
 	setTimeout(function()
@@ -145,6 +189,7 @@ function page_init()
 	
 	moreSign = document.getElementById("moreSign");
 	moreMenu = document.getElementById("moreMenu");
+	moreMenuHeight = 0;
 	
 	sidebarClass    = document.getElementsByClassName("sidebar");
 	sidebarTabClass = document.getElementsByClassName("sidebarTab");

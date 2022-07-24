@@ -27,6 +27,25 @@
 		display: none;
 	}
 	
+	#contentCover
+	{
+		height: 60px;
+		position: fixed;
+		z-index: 1;
+	}
+	
+	#topSpan
+	{
+		position: sticky;
+		top: 49px;
+	}
+	
+	#topCoverDiv
+	{
+		margin-top: -13px;
+		z-index: 1;
+	}
+	
 	#sidebarDiv
 	{
 		position: fixed;
@@ -66,6 +85,10 @@
 	#hamburgerSpan
 	{
 		display: inline-block;
+		position: sticky;
+		top: 8px;
+		
+		z-index: 2;
 	}
 	
 	#hamburgerSpan:hover
@@ -156,6 +179,13 @@
 		display: none;
 	}
 	
+	#contentCover
+	{
+		height: 12px;
+		position: sticky;
+		margin-bottom: -12px;
+	}
+	
 	.sidebar
 	{
 		display: none;
@@ -168,12 +198,35 @@
 		width: 150px;
 	}
 	
+	/* This is used solely to position the horizonal rule correctly. */
+	#topSpan
+	{
+		position: relative;
+	}
+
+	#topCoverDiv
+	{
+		position: relative;
+		top: -5px;
+	}
+
+	#topRuleDiv
+	{
+		position: relative;
+		top: -9px;
+	}
+	
 	#navDiv
 	{
 		display: flex;
 		flex-direction: row;
 		wrap-flex: no-wrap;
 		justify-content: center;
+		
+		position: sticky;
+		top: 11px;
+		
+		background-color: #eeeeee;
 		
 		/* Keeps the navigation bar from resizing when hovering over signs. */
 		height: 100px;
@@ -253,10 +306,50 @@
 		
 		width: 200px;
 		height: 500px;
-		background-color: red;
+		background-color: #cccccc;
 		
 		/* Appears wherever the mouse is clicked. */
 		position: fixed;
+	}
+	
+	.moreMenuAnchor
+	{
+		display: block;
+	}
+	
+	/* Making sure links don't change colour. */
+	.moreMenuAnchor:visited, .moreMenuAnchor:link
+	{
+		color: black;
+	}
+	
+	.moreMenuLink
+	{
+		position: relative;
+		
+		cursor: pointer;
+	}
+	
+	.moreMenuLink:hover
+	{
+		background-color: #d9d9d9;
+		
+		animation-name: highlight_tab;
+		animation-duration: 0.2s;
+		animation-timing-function: ease-out;
+	}
+	
+	.moreMenuIcon
+	{
+		width: 25px;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	
+	.moreMenuText
+	{
+		position: absolute;
+		top: 8px;
 	}
 }
 
@@ -264,12 +357,15 @@
 body
 {
 	background-color: #eeeeee;
+	
+	font-family: "Merriweather", serif;
 }
 
-/* This is used solely to position the horizonal rule correctly. */
-#topSpan
+#contentCover
 {
-	position: relative;
+	width: 98%;
+	background-color: #eeeeee;
+	top: 0;
 }
 
 /* Used so that the navigation sign boards hide behind the horizontal rule. */
@@ -279,8 +375,6 @@ body
 	display: block;
 	background-color: #eeeeee;
 	
-	position: relative;
-	top: -5px;
 	z-index: 1;
 }
 
@@ -289,8 +383,6 @@ body
 	/* This positions the div so that the horizontal rule goes at the edge of the top cover. */
 	height: 20px;
 	margin-top: -10px;
-	position: relative;
-	top: -9px;
 	z-index: 2;
 
 	/* This is the actual horizonal rule image. */
