@@ -1,0 +1,40 @@
+
+/* Mobile layout. */
+@media screen and (max-width: 800px)
+{
+	/* Allows the table to fit on smaller screens. */
+	.semesterEntry, .codeEntry
+	{
+		display: none;
+	}
+}
+
+/* PC layout. */
+@media screen and (min-width: 801px)
+{
+	/* Padding breaks table on mobile, so get rid of it. */
+	td
+	{
+		padding-right: 20px;
+	}
+}
+
+table
+{
+	margin: auto;
+}
+
+thead th
+{
+	padding-bottom: 10px;
+}
+
+td
+{
+	padding-bottom: 10px;
+}
+
+.semesterEntry
+{
+	font-weight: bold;
+}

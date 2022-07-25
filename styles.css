@@ -391,7 +391,38 @@ body
 	background-position: top;
 }
 
+/* For the landing page. */
 #defaultMessage
 {
 	text-align: center;
+}
+
+/* For any pages. */
+#content
+{
+	width: 80%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+#content p
+{
+	text-align: left;
+	text-indent: 25px;
+	line-height: 1.7;
+}
+
+#content a
+{
+	text-decoration: none;
+}
+
+#content a:hover
+{
+	text-decoration: underline;
+}
+
+#content a:visited
+{
+	color: #2299cc;
 }

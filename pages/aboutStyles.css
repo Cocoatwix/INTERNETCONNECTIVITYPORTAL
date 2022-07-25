@@ -1,0 +1,20 @@
+
+#socials
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+
+#socials img
+{
+	width: 100px;
+	filter: grayscale(25%);
+}
+
+#socials img:hover
+{
+	filter: grayscale(0%);
+}
