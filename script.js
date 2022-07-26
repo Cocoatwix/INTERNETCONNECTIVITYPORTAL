@@ -201,4 +201,7 @@ function page_init()
 	moreSign.onclick  = show_more_menu;
 	
 	check_layout();
+	
+	//Get URL
+	console.log(window.location.href);
 }
