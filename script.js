@@ -109,10 +109,7 @@ function inspect_signs()
 	
 	//Hide more arrow when not needed
 	if (signCapacity >= signCount-1)
-	{
 		moreSign.style.display = "none";
-		console.log("???");
-	}
 	
 	if (signCapacity == signCount-1)
 		navSignDivClass[signCapacity-1].style.display = "block";
@@ -202,6 +199,20 @@ function page_init()
 	
 	check_layout();
 	
-	//Get URL
-	console.log(window.location.href);
+	//Get URL - I will rewrite this with regex when I have more time
+	//https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/index.html?
+	//https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/
+	//let relURL = window.location.href.split("/");
+	let relURL = "https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/";
+	relURL = relURL[relURL.length - 1];
+	relURL = relURL.split("?");
+	relURL = relURL[relURL.length - 1];
+	relURL = relURL.split("&");
+	console.log(relURL);
+	
+	//index.html
+	if ((relURL.length == 1) && ((relURL[0] == "/") || (relURL[0] == "")))
+	{
+		console.log(":)");
+	}
 }
