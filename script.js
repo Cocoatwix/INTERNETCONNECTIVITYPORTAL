@@ -199,20 +199,5 @@ function page_init()
 	
 	check_layout();
 	
-	//Get URL - I will rewrite this with regex when I have more time
-	//https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/index.html?
-	//https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/
-	//let relURL = window.location.href.split("/");
-	let relURL = "https://cocoatwix.github.io/INTERNETCONNECTIVITYPORTAL/";
-	relURL = relURL[relURL.length - 1];
-	relURL = relURL.split("?");
-	relURL = relURL[relURL.length - 1];
-	relURL = relURL.split("&");
-	console.log(relURL);
-	
-	//index.html
-	if ((relURL.length == 1) && ((relURL[0] == "/") || (relURL[0] == "")))
-	{
-		console.log(":)");
-	}
+	//I'd like to make index.html a template, but I don't have a web service to host pages
 }
