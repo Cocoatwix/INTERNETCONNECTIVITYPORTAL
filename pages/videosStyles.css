@@ -2,25 +2,19 @@
 /* Mobile layout. */
 @media screen and (max-width: 800px)
 {	
-	.projectImg
+	iframe
 	{
 		margin: auto;
+		margin-bottom: 20px;
 		width: 80%;
-	}
-	
-	/* Prevents titles from scrolling off the page on mobile. */
-	.bigProjectTitle
-	{
-		font-size: 1em;
 	}
 }
 
 /* PC layout. */
 @media screen and (min-width: 801px)
 {
-	.projectImg
+	iframe
 	{
-		width: 312px;
 		float: left;
 		margin-right: 20px;
 	}
@@ -28,27 +22,18 @@
 
 
 /* Inline-block prevents project headers from being misaligned. */
-.projectDiv
+.videoDiv
 {
 	display: inline-block;
+	margin-bottom: 40px;
 }
 
-.projectImg
+iframe
 {
 	display: block;
 }
 
-.projectBlurb
+.videoBlurb
 {
 	line-height: 1.5;
-}
-
-.projectLinks
-{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	
-	margin-top: 20px;
-	margin-bottom: 20px;
 }

@@ -5,6 +5,7 @@ document.body.onresize = check_layout;
 
 var hamburger; 
 var sidebarDiv;
+var tabSpan;
 var sidebarX;
 var sidebarXSpan;
 var sidebarClass;
@@ -13,11 +14,22 @@ var sidebarTabClass;
 
 var sidebarShown = false;
 
+var navDiv;
 var navSignDivClass;
 var moreSign;
 
 var moreMenu;
 var moreMenuHeight;
+
+//Name, page link, label link, icon link
+const pageDetails = 
+[
+	["About", "about.html", "assets/aboutLabel.png", "assets/question.png"],
+	["Education", "education.html", "assets/educationLabel.png", "assets/education.png"],
+	["Projects", "projects.html", "assets/projectsLabel.png", "assets/gears.png"],
+	["Videos", "videos.html", "assets/videosLabel.png", "assets/television.png"],
+	["Sample", "sample.html", "assets/sampleLabel.png", "assets/happy.png"]
+];
 
 
 function toggle_sidebar()
@@ -175,6 +187,34 @@ function hide_more_menu()
 }
 
 
+function create_page(arrowSign, name, pageLink, labelLink, iconLink)
+/** Function to semi-automate the process of creating pages and adding them
+    to the navigation bar and sidebar. */
+{
+	//Create naviagtion sign
+	let DOMsign = "<div name=\"" + name + "\" ";
+	DOMsign += "class=\"PCLayout navSignDiv\">";
+	DOMsign += "<a href=\"" + pageLink + "\" class=\"PCLayout navbarAnchor\">";
+	DOMsign += "<img src=\"" + arrowSign + "\" alt=\"Arrow Sign\" class=\"PCLayout navbarItem navSign\">";
+	DOMsign += "<img src=\"" + labelLink + "\" alt=\"" + name + "\" class=\"PCLayout navbarItem navLabel\">";
+	DOMsign += "<img src=\"" + iconLink + "\" class=\"PCLayout navbarItem navIcon\">";
+	DOMsign += "</a>";
+	DOMsign += "</div>";
+	
+	navDiv.innerHTML += DOMsign;
+	
+	//Create sidebar tab
+	let DOMtab = "<a href=\"" + pageLink + "\" class=\"mobileLayout\">";
+	DOMtab += "<div class=\"sidebar mobileLayout sidebarTab inlineblockStyle\">";
+	DOMtab += "<img src=\"" + iconLink + "\" class=\"sidebar mobileLayout sidebarIcon\">";
+	DOMtab += "<img src=\"" + labelLink + "\" alt=\"" + name + "\" class=\"sidebar mobileLayout sidebarLabel\">";
+	DOMtab += "</div>";
+	DOMtab += "</a>";
+	
+	tabSpan.innerHTML += DOMtab;
+}
+
+
 function page_init()
 /** Runs when the page is fully loaded. Initialises DOM objects and
     their references. */
@@ -184,20 +224,74 @@ function page_init()
 	sidebarX       = document.getElementById("sidebarX");
 	sidebarXSpan   = document.getElementById("sidebarXSpan");
 	
+	sidebarClass    = document.getElementsByClassName("sidebar");
+	sidebarTabClass = document.getElementsByClassName("sidebarTab");
+	
+	
+	//Add links to all available pages
+	navDiv  = document.getElementById("navDiv");
+	tabSpan = document.getElementById("tabSpan");
+	
+	//Now, depending on whether we're on index.html or some nested page.
+	// change the file paths.
+	
+	let relURL = window.location.href.split("/");
+	relURL = relURL[relURL.length - 1];
+	//console.log(relURL);
+	
+	//Now, add the links
+	for (let page of pageDetails)
+	{
+		if ((relURL == "index.html") || (relURL == ""))
+		{
+			page[1] = "pages/" + page[1];
+			
+			create_page("assets/arrowSignDrop.png", page[0], page[1], page[2], page[3]);
+		}
+		
+		//On a subpage
+		else
+		{
+			page[2] = "../" + page[2];
+			page[3] = "../" + page[3];
+			
+			create_page("../assets/arrowSignDrop.png", page[0], page[1], page[2], page[3]);
+		}
+	}
+	
+	//Adding more sign separately since it's different in structure
+	//Will rewrite this better later
+	if ((relURL == "index.html") || (relURL == ""))
+	{
+		navDiv.innerHTML += "<div id=\"moreSign\" class=\"PCLayout navSignDiv\">" +
+					"<img src=\"assets/arrowSignDown.png\" alt=\"Arrow Sign\" class=\"PCLayout navbarItem navSign\">" +
+					"<img src=\"assets/moreLabel.png\" alt=\"More\" id=\"moreLabel\" class=\"PCLayout navbarItem navLabel\">" +
+					"<img src=\"assets/exclamation.png\" id=\"moreIcon\" class=\"PCLayout navbarItem navIcon\">" +
+				"</div>";
+	}
+	
+	else
+	{
+		navDiv.innerHTML += "<div id=\"moreSign\" class=\"PCLayout navSignDiv\">" +
+					"<img src=\"../assets/arrowSignDown.png\" alt=\"Arrow Sign\" class=\"PCLayout navbarItem navSign\">" +
+					"<img src=\"../assets/moreLabel.png\" alt=\"More\" id=\"moreLabel\" class=\"PCLayout navbarItem navLabel\">" +
+					"<img src=\"../assets/exclamation.png\" id=\"moreIcon\" class=\"PCLayout navbarItem navIcon\">" +
+				"</div>";
+	}
+	
+	//Assign references to newly-added signs
+	navSignDivClass = document.getElementsByClassName("navSignDiv");
+	
 	moreSign = document.getElementById("moreSign");
 	moreMenu = document.getElementById("moreMenu");
 	moreMenuHeight = 0;
 	
-	sidebarClass    = document.getElementsByClassName("sidebar");
-	sidebarTabClass = document.getElementsByClassName("sidebarTab");
-	navSignDivClass = document.getElementsByClassName("navSignDiv");
 	
+	//Event handlers
 	hamburger.onclick = toggle_sidebar;
 	sidebarX.onclick  = toggle_sidebar;
 	
 	moreSign.onclick  = show_more_menu;
 	
 	check_layout();
-	
-	//I'd like to make index.html a template, but I don't have a web service to host pages
 }
