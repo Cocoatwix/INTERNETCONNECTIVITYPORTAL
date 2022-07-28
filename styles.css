@@ -20,6 +20,12 @@
 	100% {background-color: #d9d9d9;}
 }
 
+@keyframes full_rotation
+{
+	0%   {transform: rotate(0deg);}
+	100% {transform: rotate(-360deg);}
+}
+
 @media screen and (max-width: 800px)
 {
 	.PCLayout
@@ -351,6 +357,12 @@
 		position: absolute;
 		top: 8px;
 	}
+	
+	#loadingCircle
+	{
+		position: relative;
+		top: -100px;
+	}
 }
 
 /* General styling */
@@ -399,7 +411,7 @@ body
 
 /* For any pages. */
 #content
-{
+{	
 	width: 80%;
 	margin: auto;
 	margin-top: 30px;
@@ -425,4 +437,22 @@ body
 #content a:visited
 {
 	color: #2299cc;
+}
+
+#loadingCircle
+{
+	width: 10%;
+	display: block;
+	margin: auto;
+	
+	animation-name: full_rotation;
+	animation-duration: 1.2s;
+	animation-iteration-count: infinite;
+}
+
+footer
+{
+	text-align: center;
+	font-size: 0.75em;
+	color: #888888;
 }

@@ -3,6 +3,11 @@
 document.body.onload   = page_init;
 document.body.onresize = check_layout;
 
+var footer;
+var footerImg;
+var loadingCircle;
+var content;
+
 var hamburger; 
 var sidebarDiv;
 var tabSpan;
@@ -28,7 +33,7 @@ const pageDetails =
 	["Education", "education.html", "assets/educationLabel.png", "assets/education.png"],
 	["Projects", "projects.html", "assets/projectsLabel.png", "assets/gears.png"],
 	["Videos", "videos.html", "assets/videosLabel.png", "assets/television.png"],
-	["Sample", "sample.html", "assets/sampleLabel.png", "assets/happy.png"]
+	["Music", "music.html", "assets/musicLabel.png", "assets/musicnote.png"]
 ];
 
 
@@ -100,7 +105,8 @@ function inspect_signs()
 			sign.style.display = "none";
 			
 			//Adding more menu elements
-			moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
+			if (signChildren.length != 0)
+				moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
 			
 			moreSign.style.display = "block";
 		}
@@ -110,7 +116,8 @@ function inspect_signs()
 			if (sign.id != "moreSign")
 			{
 				//Adding more menu elements
-				moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
+				if (signChildren.length != 0)
+					moreMenu.innerHTML += create_moreMenu_link(sign, signChildren[2].src, sign.children[0].href);
 				
 				sign.style.display = "none";
 			}
@@ -219,6 +226,10 @@ function page_init()
 /** Runs when the page is fully loaded. Initialises DOM objects and
     their references. */
 {
+	footer         = document.getElementsByTagName("footer")[0];
+	loadingCircle  = document.getElementById("loadingCircle");
+	content        = document.getElementById("content");
+	
 	hamburger      = document.getElementById("hamburger");
 	sidebarDiv     = document.getElementById("sidebarDiv");
 	sidebarX       = document.getElementById("sidebarX");
@@ -260,6 +271,7 @@ function page_init()
 	}
 	
 	//Adding more sign separately since it's different in structure
+	//Also getting any other data that changes between locations
 	//Will rewrite this better later
 	if ((relURL == "index.html") || (relURL == ""))
 	{
@@ -268,6 +280,8 @@ function page_init()
 					"<img src=\"assets/moreLabel.png\" alt=\"More\" id=\"moreLabel\" class=\"PCLayout navbarItem navLabel\">" +
 					"<img src=\"assets/exclamation.png\" id=\"moreIcon\" class=\"PCLayout navbarItem navIcon\">" +
 				"</div>";
+				
+		footerImg = "assets/ZS.png";
 	}
 	
 	else
@@ -277,6 +291,8 @@ function page_init()
 					"<img src=\"../assets/moreLabel.png\" alt=\"More\" id=\"moreLabel\" class=\"PCLayout navbarItem navLabel\">" +
 					"<img src=\"../assets/exclamation.png\" id=\"moreIcon\" class=\"PCLayout navbarItem navIcon\">" +
 				"</div>";
+				
+		footerImg = "../assets/ZS.png";
 	}
 	
 	//Assign references to newly-added signs
@@ -293,5 +309,15 @@ function page_init()
 	
 	moreSign.onclick  = show_more_menu;
 	
+	//Add footer data
+	footer.innerHTML += "Zach Strong<br>";
+	//let currDate = new Date();
+	//footer.innerHTML += currDate.toDateString();
+	footer.innerHTML += "July 28, 2022<br>";
+	footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
+	
 	check_layout();
+	
+	//After page is done loading, remove loading GIF, show content
+	loadingCircle.style.display = "none";
 }

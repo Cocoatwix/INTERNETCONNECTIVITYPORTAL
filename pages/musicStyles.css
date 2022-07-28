@@ -1,0 +1,39 @@
+
+/* Mobile layout. */
+@media screen and (max-width: 800px)
+{	
+	iframe
+	{
+		margin: auto;
+		margin-bottom: 20px;
+		width: 80%;
+	}
+}
+
+/* PC layout. */
+@media screen and (min-width: 801px)
+{
+	iframe
+	{
+		float: left;
+		margin-right: 20px;
+	}
+}
+
+
+/* Inline-block prevents project headers from being misaligned. */
+.musicDiv
+{
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+iframe
+{
+	display: block;
+}
+
+.musicBlurb
+{
+	line-height: 1.5;
+}
