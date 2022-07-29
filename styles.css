@@ -397,7 +397,7 @@ body
 	margin-top: -10px;
 	z-index: 2;
 
-	/* This is the actual horizonal rule image. */
+	/* This is the actual horizontal rule image. */
 	background-image: url("assets/hrule.png");
 	background-repeat: repeat-x;
 	background-position: top;
