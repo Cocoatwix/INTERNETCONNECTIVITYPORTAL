@@ -26,6 +26,7 @@
 	100% {transform: rotate(-360deg);}
 }
 
+/* Mobile layout */
 @media screen and (max-width: 800px)
 {
 	.PCLayout
@@ -178,7 +179,7 @@
 }
 
 /* Regular layout for larger screens. */
-@media screen and (min-width: 801px)
+@media screen and (min-width: 800px)
 {
 	.mobileLayout
 	{
@@ -226,7 +227,7 @@
 	{
 		display: flex;
 		flex-direction: row;
-		wrap-flex: no-wrap;
+		/* flex-wrap: no-wrap; */
 		justify-content: center;
 		
 		position: sticky;
@@ -455,4 +456,35 @@ footer
 	text-align: center;
 	font-size: 0.75em;
 	color: #888888;
+}
+
+/* Fixing transition between mobile and PC */
+@media screen and (width: 800px)
+{
+	.PCLayout
+	{
+		display: none;
+	}
+	
+	.mobileLayout
+	{
+		display: none !important;
+	}
+	
+	#contentCover
+	{
+		height: 12px;
+		position: sticky;
+		margin-bottom: -12px;
+	}
+	
+	.sidebar
+	{
+		display: none;
+	}
+	
+	#headImg
+	{
+		display: none;
+	}
 }
