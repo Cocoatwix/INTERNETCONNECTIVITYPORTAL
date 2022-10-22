@@ -440,6 +440,15 @@ body
 	color: #2299cc;
 }
 
+#cover
+{
+	max-width: 50%;
+	display: block;
+	margin: auto;
+	
+	border: 5px solid grey;
+}
+
 #loadingCircle
 {
 	width: 10%;

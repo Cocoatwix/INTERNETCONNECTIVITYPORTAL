@@ -313,7 +313,7 @@ function page_init()
 	footer.innerHTML += "Zach Strong<br>";
 	//let currDate = new Date();
 	//footer.innerHTML += currDate.toDateString();
-	footer.innerHTML += "July 28, 2022<br>";
+	footer.innerHTML += "Oct 22, 2022<br>";
 	footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 	
 	check_layout();
