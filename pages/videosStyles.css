@@ -33,6 +33,12 @@ iframe
 	display: block;
 }
 
+.fauxiframe
+{
+	float: left;
+	margin-right: 20px;
+}
+
 .videoBlurb
 {
 	line-height: 1.5;

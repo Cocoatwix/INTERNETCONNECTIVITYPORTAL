@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A simple Newton fractal generator.">
+		<meta name="keywords" content="Newton, fractal, generator, maths">
+		<meta name="author" content="Zach Strong">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index, follow">
+		
+		<!-- <link rel="stylesheet" href="styles.css"> -->
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+		<title>Newton</title>
+	</head>
+	<body>
+		<canvas id="fractalCanvas" width="1280" height="720">
+			Javascript must be enable in your browser to use this fractal viewer!
+		</canvas>
+		
+		<style>
+			body
+			{
+				font-family: Merriweather, serif;
+				background-color: grey;
+			}
+			
+			#fractalCanvas
+			{
+				border: 2px solid grey;
+				
+				display: block;
+				margin: auto;
+			}
+		</style>
+		
+		<br>
+		3<sup>x</sup> - x<sup>3</sup> = 0
+		
+		<script src="fractalScript.js"></script>
+	</body>
+</html>
