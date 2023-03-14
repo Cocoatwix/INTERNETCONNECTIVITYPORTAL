@@ -145,7 +145,7 @@ function check_layout()
 /** When viewport changes size, check to see if we need to make
 	  any adjustments to the layout. */
 {
-	//Always get rid of more menu when resiing the sceen
+	//Always get rid of more menu when resizing the screen
 	hide_more_menu()
 	
 	//This ensures the sidebar is properly closed when switching layouts
@@ -313,7 +313,7 @@ function page_init()
 	footer.innerHTML += "Zach Strong<br>";
 	//let currDate = new Date();
 	//footer.innerHTML += currDate.toDateString();
-	footer.innerHTML += "Mar 13, 2023<br>";
+	footer.innerHTML += "Mar 14, 2023<br>";
 	footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 	
 	check_layout();

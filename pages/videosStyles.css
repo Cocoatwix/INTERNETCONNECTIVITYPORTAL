@@ -2,18 +2,23 @@
 /* Mobile layout. */
 @media screen and (max-width: 800px)
 {	
-	iframe
+	iframe, .fauxiframe
 	{
 		margin: auto;
 		margin-bottom: 20px;
 		width: 80%;
+	}
+	
+	.fauxiframe
+	{
+		height: 80%;
 	}
 }
 
 /* PC layout. */
 @media screen and (min-width: 801px)
 {
-	iframe
+	iframe, .fauxiframe
 	{
 		float: left;
 		margin-right: 20px;
@@ -28,15 +33,9 @@
 	margin-bottom: 40px;
 }
 
-iframe
+iframe, .fauxiframe
 {
 	display: block;
-}
-
-.fauxiframe
-{
-	float: left;
-	margin-right: 20px;
 }
 
 .videoBlurb
