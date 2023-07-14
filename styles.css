@@ -26,6 +26,19 @@
 	100% {transform: rotate(-360deg);}
 }
 
+/* For toggling collapsedOldContent */
+@keyframes fade_in
+{
+	0%   {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fade_out
+{
+	0%   {opacity: 1;}
+	100% {opacity: 0;}
+}
+
 /* Mobile layout */
 @media screen and (max-width: 800px)
 {
@@ -372,6 +385,46 @@ body
 	background-color: #eeeeee;
 	
 	font-family: "Merriweather", serif;
+}
+
+.collapsedOldHeader
+{
+	font-size: 1.5em;
+}
+
+.collapsedOldButton
+{
+	/* Creating manual buttons is fun */
+	width: 35px;
+	height: 35px;
+	padding-left: 15px;
+	padding-bottom: 2px;
+	
+	border: 2px solid #bbbbbb;
+	
+	float: right;
+	transition: background-color 0.2s;
+	
+	font-size: 2em;
+	
+	/* w3schools.com/howto/howto_css_disable_text_selection.asp */
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Default */
+}
+
+.collapsedOldButton:hover
+{
+	background-color: #d9d9d9;
+	cursor: pointer;
+}
+
+.collapsedOldContent
+{
+	display: none;
+	opacity: 0;
+	
+	animation-duration: 0.5s;
 }
 
 .newsImage

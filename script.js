@@ -56,6 +56,41 @@ function toggle_sidebar()
 }
 
 
+function toggle_collapsedOld()
+/** Toggles a collapsed old into/out of view. */
+{
+	let collapsedOldID      = this.parentNode.id;
+	let collapsedOldContent = this.parentNode.children["oldContent" + collapsedOldID];
+	let fadeTime = 0.5;
+	
+	//If we need to expand the old
+	if (this.innerHTML == "+")
+	{
+		this.innerHTML = "-";
+		
+		//This may break if we add more styling to the oldContent span
+		collapsedOldContent.style.display = "block";
+		collapsedOldContent.style.opacity = "1";
+		collapsedOldContent.style.animation = "fade_in " + fadeTime + "s";
+	}
+	
+	else
+	{
+		this.innerHTML = "+";
+		
+		//This may break if we add more styling to the oldContent span
+		collapsedOldContent.style.animation = "fade_out " + fadeTime + "s";
+		
+		setTimeout(function()
+		{
+			collapsedOldContent.style.display = "none";
+			collapsedOldContent.style.opacity = "0";
+		}, fadeTime*1000 - 100);
+		
+	}
+}
+
+
 function create_moreMenu_link(sign, signIconSrc, signLink)
 /** Creates a moreMenu link element as a string and
     returns it. */
@@ -238,7 +273,6 @@ function page_init()
 	sidebarClass    = document.getElementsByClassName("sidebar");
 	sidebarTabClass = document.getElementsByClassName("sidebarTab");
 	
-	
 	//Add links to all available pages
 	navDiv  = document.getElementById("navDiv");
 	tabSpan = document.getElementById("tabSpan");
@@ -309,11 +343,21 @@ function page_init()
 	
 	moreSign.onclick  = show_more_menu;
 	
+	//For collapsed olds, add functionality to each + button
+	if ((relURL == "index.html") || (relURL == ""))
+	{
+		let olds = document.getElementsByClassName("collapsedOld");
+		
+		//Iterate through each old, add button functionality
+		for (let old of olds)
+			old.children["oldButton" + old.id].onclick = toggle_collapsedOld;
+	}
+	
 	//Add footer data
 	footer.innerHTML += "Zach Strong<br>";
 	//let currDate = new Date();
 	//footer.innerHTML += currDate.toDateString();
-	footer.innerHTML += "Mar 14, 2023<br>";
+	footer.innerHTML += "Jul 14, 2023<br>";
 	footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 	
 	check_layout();
