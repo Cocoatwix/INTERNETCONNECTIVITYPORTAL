@@ -52,3 +52,9 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+.miniProjectDiv
+{
+	border: 1px dashed grey;
+	padding: 10px;
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head lang="en-CA">
+		<title>The Square Problem</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Square tool made for SoME3.">
+		<meta name="keywords" content="SoME3, Square, Puzzle">
+			<meta name="author" content="Zach Strong">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="robots" content="index, follow">
+		
+		<link rel="stylesheet" href="square.css">
+	</head>
+	<body>
+		<canvas width="720" height="720" id="squareCanvas" class="boxedElement">Enable JavaScript to view the HTML5 canvas!</canvas>
+		
+		<div id="controlDiv" class="boxedElement">
+			<div id="webpageControlDiv">
+				<a class="controlIgnore" href="..\..\..\index.html">&laquo; Back to the main page!</a>
+			</div>
+			
+			<div id="displayControlDiv">
+				<span class="controlHeader">Display Mode</span>
+				<span>
+					<input type="radio" id="allRadio" name="displayControl" value="all" checked>
+					<label for="allRadio">All</label>
+				</span>
+				<span>
+					<input type="radio" id="leftRadio" name="displayControl" value="left">
+					<label for="leftRadio">Left</label>
+				</span>
+				<span>
+					<input type="radio" id="rightRadio" name="displayControl" value="right">
+					<label for="rightRadio">Right</label>
+				</span>
+				<span>
+					<input type="radio" id="noneRadio" name="displayControl" value="none">
+					<label for="noneRadio">None</label>
+				</span>
+			</div>
+			
+			<div id="colourControlDiv">
+				<span class="controlHeader">Colouring</span>
+				<span>
+					<input type="checkbox" id="innerLineCheck" name="colourControl" value="innerLine">
+					<label for="innerLineCheck">Toggle Inner Line</label>
+				</span>
+				<span>
+					<input type="checkbox" id="topDividersCheck" name="colourControl" value="topDividingLines">
+					<label for="topDividersCheck">Toggle Top Dividing Lines</label>
+				</span>
+				<span>
+					<input type="checkbox" id="bottomDividersCheck" name="colourControl" value="bottomDividingLines">
+					<label for="bottomDividersCheck">Toggle Bottom Dividing Lines</label>
+				</span>
+				<span>
+					<input type="checkbox" id="topTriangle1Check" name="colourControl" value="topTriangle1">
+					<label for="topTriangle1Check">Toggle Horizontal Top Triangle</label>
+				</span>
+				<span>
+					<input type="checkbox" id="topTriangle2Check" name="colourControl" value="topTriangle2">
+					<label for="topTriangle2Check">Toggle Vertical Top Triangle</label>
+				</span>
+				<span>
+					<input type="checkbox" id="bottomTriangle1Check" name="colourControl" value="bottomTriangle1">
+					<label for="bottomTriangle1Check">Toggle Horizontal Bottom Triangle</label>
+				</span>
+				<span>
+					<input type="checkbox" id="bottomTriangle2Check" name="colourControl" value="bottomTriangle2">
+					<label for="bottomTriangle2Check">Toggle Vertical Bottom Triangle</label>
+				</span>
+			</div>
+		</div>
+		<hr>
+		<span>
+			Just a small note: if the page is scrolled or zoomed, the hitbox for the green dot will be offset. 
+			I can't be bothered to fix this, so just scroll the page all the way to the top and keep the zoom consistent before attempting to manipulate the square!
+			If you need to page to be zoomed, zooming and then refreshing will fix the dot.
+		</span>
+		
+		<script src="square.js"></script>
+	</body>
+</html>

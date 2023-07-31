@@ -1,0 +1,55 @@
+
+body
+{
+	background-color: #CCCCCC;
+}
+
+.boxedElement
+{
+	background-color: #DDDDDD;
+	border: 3px solid white;
+}
+
+.controlHeader
+{
+	margin-bottom: 8px;
+	font-weight: bold;
+	text-decoration-line: underline;
+	margin: auto;
+}
+
+#squareCanvas
+{
+	display: block;
+	margin: auto;
+}
+
+#controlDiv
+{
+	margin-top: 10px;
+	padding: 5px;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+/* The boxes inside the control panel should
+   have their items stacked vertically. */
+#controlDiv div
+{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#webpageControlDiv
+{
+	height: 160px; /* This sucks, but whatever. I wish I could use inherit here. */
+	justify-content: center;
+	padding-right: 50px;
+}
