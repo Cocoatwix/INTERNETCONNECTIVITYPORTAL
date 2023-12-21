@@ -1,0 +1,122 @@
+
+/** CSS file for holding all dark mode stylings for INTERNETCONNECTIVITYPORTAL. */
+
+@keyframes dark_highlight_tab
+{
+	0%   {background-color: #111111;}
+	100% {background-color: #333333;}
+}
+
+@keyframes dark_but_lighter_highlight_tab
+{
+	0%   {background-color: #222222;}
+	100% {background-color: #333333;}
+}
+
+h1.darkMode
+{
+	color: #FFFFFF;
+}
+
+p.darkMode
+{
+	color: #FFFFFF;
+}
+
+img.darkMode
+{
+	filter: invert(100%);
+}
+
+#topRuleDiv.darkMode
+{
+	background-image: url("assets/darkHrule.png");
+}
+
+#content.darkMode
+{
+	background-color: #111111;
+	color: #FFFFFF;
+}
+
+#navDiv.darkMode
+{
+	background-color: #111111;
+	color: #FFFFFF;
+}
+
+#topCoverDiv.darkMode
+{
+	background-color: #111111;
+	color: #FFFFFF;
+}
+
+#topRuleDiv.darkMode
+{
+	background-color: #111111;
+	color: #FFFFFF;
+}
+
+#contentCover.darkMode
+{
+	background-color: #111111;
+	color: #FFFFFF;
+}
+
+#sidebarDiv.darkMode
+{
+	background-color: #222222;
+	color: #FFFFFF;
+}
+
+#sidebarXDiv.darkMode
+{
+	background-color: #222222;
+	color: #FFFFFF;
+}
+
+span.darkMode
+{
+	color: #FFFFFF;
+}
+
+#moreMenu.darkMode
+{
+	background-color: #111111;
+}
+
+.moreMenuLink:hover.darkMode
+{
+	background-color: #333333;
+	
+	animation-name: dark_highlight_tab;
+}
+
+.collapsedOldButton:hover.darkMode
+{
+	background-color: #333333;
+}
+
+#hamburgerSpan:hover.darkMode
+{
+	background-color: #333333;
+}
+
+#sidebarXSpan:hover.darkMode
+{
+	background-color: #333333;
+	
+	animation-name: dark_but_lighter_highlight_tab;
+}
+
+.sidebarTab.darkMode
+{
+	background-color: #222222;
+}
+
+.sidebarTab:hover.darkMode
+{
+	background-color: #333333;
+	
+	animation-name: dark_but_lighter_highlight_tab;
+}

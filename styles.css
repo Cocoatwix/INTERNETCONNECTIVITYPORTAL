@@ -189,6 +189,25 @@
 		margin: 8px;
 		margin-top: 0px;
 	}
+	
+	#darkModeDiv
+	{
+		display: inline-block;
+		position: sticky;
+		top: 8px;
+		
+		z-index: 2;
+	}
+	
+	#darkModeButton
+	{
+		width: 50px;
+	}
+	
+	#cookieSpan
+	{
+		margin-top: 10px;
+	}
 }
 
 /* Regular layout for larger screens. */
@@ -234,6 +253,12 @@
 	{
 		position: relative;
 		top: -9px;
+	}
+	
+	#darkModeButton
+	{
+		float: right;
+		width: 60px;
 	}
 	
 	#navDiv
@@ -375,7 +400,7 @@
 	#loadingCircle
 	{
 		position: relative;
-		top: -100px;
+		/* top: -100px; */
 	}
 }
 
@@ -466,6 +491,18 @@ body
 	background-position: top;
 }
 
+#darkModeButton
+{
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+#darkModeButton:hover
+{
+	background: #d9d9d9;
+}
+
 /* For the landing page. */
 #defaultMessage
 {
@@ -513,6 +550,46 @@ body
 	animation-iteration-count: infinite;
 }
 
+#cookieBannerDiv
+{
+	display: flex;
+	
+	justify-content: space-around;
+	align-items: center;
+	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	
+	height: 100px;
+	background: #cccccc;
+	z-index: 2;
+}
+
+#cookieSpan
+{
+	display: inline-block;
+	/* background: red; */
+	position: relative;
+	left: 25px;
+}
+
+#cookieButton
+{
+	font-size: 1.5em;
+	background: yellow;
+	margin-left: 20px;
+	padding: 15px;
+	height: 20px;
+	
+	border-radius: 5px;
+	cursor: pointer;
+	
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 footer
 {
 	text-align: center;
@@ -538,6 +615,11 @@ footer
 		height: 12px;
 		position: sticky;
 		margin-bottom: -12px;
+	}
+	
+	#darkModeButton
+	{
+		display: none;
 	}
 	
 	.sidebar
