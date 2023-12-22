@@ -1,5 +1,23 @@
 "use strict";
 
+var darkMode = false;
+const darkModeBG = "#111111";
+const lightModeBG = "#EEEEEE";
+
+//Checking dark mode stuff early to try and prevent flashbangs
+//This isn't great, but hopefully it'll work better
+if (document.cookie != "")
+{
+	let c = document.cookie.split(";");
+	for (let pair of c)
+	{
+		let cc = pair.split("=");
+		if (cc[0] == "darkMode")
+			if (cc[1] == "true")
+				document.getElementsByTagName("BODY")[0].style.background = darkModeBG;
+	}
+}
+
 //Check whether we're on index.html or some nested page.
 let relURL = window.location.href.split("/");
 relURL = relURL[relURL.length - 1];
@@ -23,10 +41,6 @@ else
 document.body.onload   = page_init;
 document.body.onresize = check_layout;
 document.body.onscroll = check_layout;
-
-var darkMode = false;
-const darkModeBG = "#111111";
-const lightModeBG = "#EEEEEE";
 
 //This cookie stuff has to be specified here so that check_layout() can find them
 var cookieBanner = document.createElement("div"); //For telling the user about cookies
@@ -628,7 +642,7 @@ if ((relURL == "index.html") || (relURL == ""))
 footer.innerHTML += "Zach Strong<br>";
 //let currDate = new Date();
 //footer.innerHTML += currDate.toDateString();
-footer.innerHTML += "Dec 21, 2023<br>";
+footer.innerHTML += "Dec 22, 2023<br>";
 footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 
 check_layout();
