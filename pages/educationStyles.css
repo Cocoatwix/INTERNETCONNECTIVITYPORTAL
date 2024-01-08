@@ -2,10 +2,11 @@
 /* Mobile layout. */
 @media screen and (max-width: 800px)
 {
-	/* Allows the table to fit on smaller screens. */
-	.semesterEntry, .codeEntry
+	.courseIcon
 	{
-		display: none;
+		margin: auto;
+		margin-bottom: 20px;
+		width: 50%;
 	}
 }
 
@@ -16,6 +17,15 @@
 	td
 	{
 		padding-right: 20px;
+	}
+	
+	.courseIcon
+	{
+		float: left;
+		margin-right: 20px;
+		
+		width: 200px; 
+		height: 200px;
 	}
 }
 
@@ -34,7 +44,28 @@ td
 	padding-bottom: 10px;
 }
 
-.semesterEntry
+/* Inline-block prevents project headers from being misaligned. */
+.courseDiv
 {
-	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 40px;
+}
+
+.courseIcon
+{
+	display: block;
+	max-width: 200px;
+	
+	border: 0; 
+}
+
+.courseBlurb
+{
+	line-height: 1.5;
+}
+
+.altCourseName
+{
+	font-style: italic;
+	font-size: 0.75em;
 }
