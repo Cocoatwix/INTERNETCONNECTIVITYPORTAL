@@ -642,7 +642,7 @@ if ((relURL == "index.html") || (relURL == ""))
 footer.innerHTML += "Zach Strong<br>";
 //let currDate = new Date();
 //footer.innerHTML += currDate.toDateString();
-footer.innerHTML += "Dec 22, 2023<br>";
+footer.innerHTML += "Jan 8, 2024<br>";
 footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 
 check_layout();
