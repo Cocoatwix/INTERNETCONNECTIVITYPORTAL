@@ -120,3 +120,8 @@ span.darkMode
 	
 	animation-name: dark_but_lighter_highlight_tab;
 }
+
+.lightText.darkMode
+{
+	color: #cccccc;
+}

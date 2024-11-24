@@ -597,7 +597,12 @@ footer
 	color: #888888;
 }
 
-/* Fixing transition between mobile and PC */
+.lightText
+{
+	color: #444444;
+}
+
+/* Fixing transition between mobile and PC... partially */
 @media screen and (width: 800px)
 {
 	.PCLayout

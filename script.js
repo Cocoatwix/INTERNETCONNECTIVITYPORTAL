@@ -52,6 +52,7 @@ cookieSpan.id = "cookieSpan";
 cookieSpan.style.width = 0.6*window.innerWidth + "px";
 
 let cookieMessage = document.createElement("p");
+cookieMessage.id = "cookieBannerBodyText";
 cookieMessage.innerHTML += "This site uses a single cookie to keep track of whether dark mode is enabled or not.";
 cookieMessage.style.marginTop = "5px";
 
@@ -110,6 +111,12 @@ const pageDetails =
 		"iconLink":  "gears.png"
 	},
 	{
+		"name":      "Writings", 
+		"pageLink":  "writings.html",
+		"labelLink": "writingsLabel.png",
+		"iconLink":  "book.png"
+	},
+	{
 		"name":      "Videos",
 		"pageLink":  "videos.html",
 		"labelLink": "videosLabel.png",
@@ -120,7 +127,7 @@ const pageDetails =
 		"pageLink":  "music.html",
 		"labelLink": "musicLabel.png",
 		"iconLink":  "musicnote.png"
-	}
+	},
 ];
 
 
@@ -418,10 +425,19 @@ function update_dark_mode()
 	{
 		//Inverting text
 		for (let e of document.getElementsByTagName("p"))
-			e.classList.add(dMT);
+			if (e.id != "cookieBannerBodyText")
+				e.classList.add(dMT);
 		
 		for (let e of document.getElementsByTagName("h1"))
 			e.classList.add(dMT);
+		
+		for (let e of document.getElementsByClassName("lightText"))
+			e.classList.add(dMT);
+		
+		//Inverting generic images
+		//This causes problems with layering?
+		/* for (let e of document.getElementsByClassName("invertibleImage"))
+			e.classList.add(dMT); */
 		
 		content.classList.add(dMT);
 		
@@ -478,6 +494,13 @@ function update_dark_mode()
 		
 		for (let e of document.getElementsByTagName("h1"))
 			e.classList.remove(dMT);
+		
+		for (let e of document.getElementsByClassName("lightText"))
+			e.classList.remove(dMT);
+		
+		//Inverting generic images
+		/* for (let e of document.getElementsByClassName("invertibleImage"))
+			e.classList.remove(dMT); */
 		
 		content.classList.remove(dMT);
 		
@@ -642,7 +665,7 @@ if ((relURL == "index.html") || (relURL == ""))
 footer.innerHTML += "Zach Strong<br>";
 //let currDate = new Date();
 //footer.innerHTML += currDate.toDateString();
-footer.innerHTML += "Jan 8, 2024<br>";
+footer.innerHTML += "Nov 24, 2024<br>";
 footer.innerHTML += "<img src=\"" + footerImg + "\" alt=\"ZS\">";
 
 check_layout();

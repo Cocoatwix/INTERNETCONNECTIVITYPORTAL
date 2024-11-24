@@ -1,0 +1,73 @@
+
+/* Mobile layout. */
+@media screen and (max-width: 800px)
+{	
+	.bookshelfDiv
+	{
+		flex-direction: column;
+	}
+	
+	.bookCover
+	{
+		width: 50%;
+		
+		/* This aligns books to the center. It's really dumb, I know. */
+		margin-left: 25%;
+	}
+}
+
+/* PC layout. */
+@media screen and (min-width: 801px)
+{
+	.bookshelfDiv
+	{
+		flex-direction: row;
+	}
+	
+	.bookCover
+	{
+		width: 200px;
+	}
+	
+	.bookTitleSpan
+	{
+		width: 300px;
+		text-align: center;
+	}
+	
+	.bookDescSpan
+	{
+		width: 300px;
+		text-align: center;
+	}
+}
+
+
+.bookshelfDiv
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.bookDiv
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.bookTitleSpan
+{
+	padding-top: 5px;
+	font-size: 1.25em;
+}
+
+.bookDescSpan
+{
+	font-style: italic;
+	font-size: 0.9em;
+	
+	padding-bottom: 25px;
+}
