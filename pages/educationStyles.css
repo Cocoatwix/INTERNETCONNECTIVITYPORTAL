@@ -42,6 +42,7 @@ thead th
 td
 {
 	padding-bottom: 10px;
+	text-align: center;
 }
 
 /* Inline-block prevents project headers from being misaligned. */
